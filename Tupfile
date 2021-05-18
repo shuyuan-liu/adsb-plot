@@ -1,0 +1,6 @@
+CXX=clang++
+CXXFLAGS=-O2 --std=c++17 -march=native
+LIBS=-lpng
+
+: foreach *.cpp |> $(CXX) $(CXXFLAGS) -c %f -o %o |> %B.o 
+: *.o |> $(CXX) $(CXXFLAGS) $(LIBS) %f -o %o |> adsb-plot

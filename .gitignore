@@ -1,0 +1,5 @@
+*.o
+adsb-plot
+.tup
+.cache
+compile_commands.json
