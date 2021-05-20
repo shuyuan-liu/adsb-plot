@@ -15,7 +15,7 @@
 using namespace std;
 using namespace Utils;
 
-double pixels_per_degree = 800;
+double pixels_per_degree = 1000;
 
 int main (int argc, char* argv[])
 {
