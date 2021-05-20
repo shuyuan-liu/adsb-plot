@@ -3,3 +3,5 @@ adsb-plot
 .tup
 .cache
 compile_commands.json
+.clang-format
+
