@@ -17,7 +17,7 @@ public:
 	T           min, max;
 	constexpr T range() { return max - min; }
 
-	void update (const T& value)
+	void update_with (const T& value)
 	{
 		if (initialized) {
 			if (value < min) {

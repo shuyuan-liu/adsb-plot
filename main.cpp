@@ -5,6 +5,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <png++/image.hpp>
@@ -24,7 +25,8 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	ifstream input_file (argv[1]);
+	filesystem::path input_path (argv[1]);
+	ifstream         input_file (input_path);
 	if (!input_file.good()) {
 		cerr << "Couldn't open " << argv[1] << endl;
 		return 2;
@@ -71,7 +73,9 @@ int main (int argc, char* argv[])
 		image[y][x] = alt_to_color (alt);
 	}
 
-	image.write ("/home/shuyuan/output.png");
+	filesystem::path output_path =
+	    input_path.parent_path().string() + "/adsb-plot.png";
+	image.write (output_path);
 
 	return 0;
 }
