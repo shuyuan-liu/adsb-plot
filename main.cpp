@@ -56,8 +56,8 @@ int main (int argc, char* argv[])
 
 		Position pos = { stod (lat_str), stod (lon_str), stoi (alt_str) };
 		positions.push_back (pos);
-		lat_range.update (pos.lat);
-		lon_range.update (pos.lon);
+		lat_range.update_with (pos.lat);
+		lon_range.update_with (pos.lon);
 	}
 
 	const int image_width =
