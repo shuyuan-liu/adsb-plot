@@ -73,8 +73,8 @@ int main (int argc, char* argv[])
 		image[y][x] = alt_to_color (alt);
 	}
 
-	filesystem::path output_path =
-	    input_path.parent_path().string() + "/adsb-plot.png";
+	filesystem::path output_path = input_path.parent_path().string() + "/"
+	                             + input_path.stem().string() + ".png";
 	image.write (output_path);
 
 	return 0;
