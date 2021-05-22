@@ -17,8 +17,7 @@ void parse (std::string& input_line, std::vector<std::string>& parsed_fields)
 
 		if (field_end != std::string::npos) {
 			field_length = field_end - field_start;
-			parsed_fields.push_back (
-			    input_line.substr (field_start, field_length));
+			parsed_fields.push_back (input_line.substr (field_start, field_length));
 			field_start = field_end + 1;
 		} else {
 			// There isn't another comma so we are on the last field

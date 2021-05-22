@@ -60,10 +60,8 @@ int main (int argc, char* argv[])
 		lon_range.update_with (pos.lon);
 	}
 
-	const int image_width =
-	    static_cast<int> (ceil (lon_range.range() * pixels_per_degree));
-	const int image_height =
-	    static_cast<int> (ceil (lat_range.range() * pixels_per_degree));
+	const int image_width  = static_cast<int> (ceil (lon_range.range() * pixels_per_degree));
+	const int image_height = static_cast<int> (ceil (lat_range.range() * pixels_per_degree));
 	png::image<png::rgb_pixel> image (image_width, image_height);
 
 	for (const auto& [lat, lon, alt]: positions) {
@@ -73,8 +71,8 @@ int main (int argc, char* argv[])
 		image[y][x] = alt_to_color (alt);
 	}
 
-	filesystem::path output_path = input_path.parent_path().string() + "/"
-	                             + input_path.stem().string() + ".png";
+	filesystem::path output_path =
+	    input_path.parent_path().string() + "/" + input_path.stem().string() + ".png";
 	image.write (output_path);
 
 	return 0;
