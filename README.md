@@ -4,7 +4,7 @@ Plots the position and altitude information in [SBS-1 format](http://woodair.net
 
 Currently the latitudes and longitudes are converted to x and y coordinates through a simple constant scaling, with no compensation for the Earth’s curvature. Effectively this means the tracks plotted by this program will appear more horizontally stretched at higher latitudes.
 
-![Plotted image](sample.png)
+![Plotted image](sample-io91ub.png)
 
 ## Compiling
 
