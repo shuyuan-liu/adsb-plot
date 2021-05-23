@@ -1,6 +1,6 @@
 # adsb-plot
 
-Plots the position and altitude information in [SBS-1 format](http://woodair.net/sbs/article/barebones42_socket_data.htm) [ADS-B](https://www.sigidwiki.com/wiki/Automatic_Dependent_Surveillance-Broadcast_(ADS-B)) messages into a pretty image. These messages can be received from aircraft using a software-defined radio, such as an [RTL-SDR](https://rtl-sdr.com/) or [Airspy](https://airspy.com/), and [dump1090](https://github.com/flightaware/dump1090) / [readsb](https://github.com/Mictronics/readsb-protobuf). Each pair of coordinates received is plotted as a pixel, with its colour representing altitude.
+Plots the position and altitude information in [SBS-1 format](http://woodair.net/sbs/article/barebones42_socket_data.htm) [ADS-B](https://www.sigidwiki.com/wiki/Automatic_Dependent_Surveillance-Broadcast_(ADS-B)) messages into a pretty image. ADS-B signals can be received from aircraft using a software-defined radio, such as an [RTL-SDR](https://rtl-sdr.com/) or [Airspy](https://airspy.com/), then decoded with [dump1090](https://github.com/flightaware/dump1090) / [readsb](https://github.com/Mictronics/readsb-protobuf). Each pair of coordinates received is plotted as a pixel, with its colour representing altitude.
 
 Currently the latitudes and longitudes are converted to x and y coordinates through a simple constant scaling, with no compensation for the Earth’s curvature. Effectively this means the tracks plotted by this program will appear more horizontally stretched at higher latitudes.
 
@@ -25,4 +25,4 @@ The antenna is a quarter wave ground plane antenna designed with [M0UKD’s calc
 - `dump1090 --gain 25 --net --fix --metric`
 - `nc localhost 30003 | tee --append adsb.csv`
 
-The image above was produced from 4.9 GiB of data recorded in IO91UB on and off over a week. You might be able to spot London Heathrow, London Gatwick and Redhill Airport!
+The image above was produced from 4.9 GiB of data recorded in IO91UB on and off over a week. You might be able to spot where London Heathrow and London Gatwick are!
